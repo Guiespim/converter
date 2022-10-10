@@ -56,7 +56,7 @@
                     <!-- TYPE COIN INPUT -->
                     <mat-form-field appearance="fill" class="col-12">
                         <mat-label>Coin</mat-label>
-                        <mat-select formControlName="resultCoin" #resultCoin (selectionChange)="convertResult()">
+                        <mat-select formControlName="resultCoin" #resultCoin (selectionChange)="getObject(currentCoin.value)">
                             <mat-option *ngFor="let item of coins" [value]="item" [disabled]="item == currentCoin.value">
                                 {{item}}
                             </mat-option>
