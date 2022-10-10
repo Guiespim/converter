@@ -1,0 +1,19 @@
+@import '/src/assets/css/main.scss';
+
+
+header {
+    background: $green;
+}
+
+
+h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: $background;
+    margin: 0 !important;
+}
+
+mat-icon {
+    font-size: 2rem;
+    color: $background;
+}
