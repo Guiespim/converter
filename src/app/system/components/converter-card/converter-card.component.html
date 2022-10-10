@@ -8,7 +8,7 @@
     
                 <div class="d-flex align-items-center mb-3">
                     <mat-icon class="me-2">info</mat-icon>
-                    <h1 class="m-0">Choose your coin and your value</h1>
+                    <h1 class="m-0">Choose your currency and your value</h1>
                 </div>
     
                 <div>
@@ -21,7 +21,7 @@
 
                     <!-- TYPE COIN INPUT -->
                     <mat-form-field class="col-12" appearance="fill">
-                        <mat-label>Coin</mat-label>
+                        <mat-label>Currency</mat-label>
                         <mat-select formControlName="currentCoin" #currentCoin (selectionChange)="getObject(currentCoin.value)">
                             <mat-option *ngFor="let item of coins" [value]="item" [disabled]="item == resultCoin.value">
                                 {{item}}
@@ -41,7 +41,7 @@
     
                 <div class="d-flex align-items-center mb-3">
                     <mat-icon class="me-2">info</mat-icon>
-                    <h1 class="m-0">Select your result coin and get your result</h1>
+                    <h1 class="m-0">Select your result currency and get your result</h1>
                 </div>
     
                 <div>
@@ -55,7 +55,7 @@
 
                     <!-- TYPE COIN INPUT -->
                     <mat-form-field appearance="fill" class="col-12">
-                        <mat-label>Coin</mat-label>
+                        <mat-label>Currency</mat-label>
                         <mat-select formControlName="resultCoin" #resultCoin (selectionChange)="getObject(currentCoin.value)">
                             <mat-option *ngFor="let item of coins" [value]="item" [disabled]="item == currentCoin.value">
                                 {{item}}

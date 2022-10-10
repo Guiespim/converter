@@ -77,7 +77,7 @@ export class ConverterCardComponent implements OnInit {
   /* FORMAT INTO CURRENCY */
 
   private formatCurrency(value: number): any {
-    if (value<0.50 && value!=0) {
+    if (value < 0.50 && value != 0) {
       const zeros: number = Math.floor(Math.abs(Math.log10(value) + 1))
       return value.toLocaleString('pt-br', { style: 'currency', currency: this.resultCoin, minimumFractionDigits: zeros + 2 })
     } else {
