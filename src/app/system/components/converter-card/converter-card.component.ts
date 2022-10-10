@@ -67,9 +67,23 @@ export class ConverterCardComponent implements OnInit {
     if (this.resultCoin) {
       const currentCoin: number = Number(this.form.get("currentCoinValue")?.value)
       const value: number = currentCoin * Number(this.convert.rates[this.resultCoin])
-      this.form.get("resultCoinValue")?.setValue(value)
+      const formatedValue: string = this.formatCurrency(value)
+      this.form.get("resultCoinValue")?.setValue(formatedValue)
       this.loader = false
     }
   }
+
+
+  /* FORMAT INTO CURRENCY */
+
+  private formatCurrency(value: number): any {
+    if (value<0.50 && value!=0) {
+      const zeros: number = Math.floor(Math.abs(Math.log10(value) + 1))
+      return value.toLocaleString('pt-br', { style: 'currency', currency: this.resultCoin, minimumFractionDigits: zeros + 2 })
+    } else {
+      return value.toLocaleString('pt-br', { style: 'currency', currency: this.resultCoin })
+    }
+  }
+
 
 }
